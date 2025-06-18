@@ -1,7 +1,7 @@
 ---
 # defaults file for ansible-openvswitch
 
-openvswitch_bridges_list: []
+openvswitch_bridges: []
 # - bridge: 'br-int'
 #   state: 'present'
 
