@@ -1,12 +1,12 @@
 ---
 # tasks file for ansible-openvswitch
-- include: debian.yml
+- include_tasks: debian.yml
   when: ansible_os_family == "Debian"
 
-- include: service.yml
+- include_tasks: service.yml
 
-- include: system_tuning.yml
+- include_tasks: system_tuning.yml
 
-- include: bridges.yml
+- include_tasks: bridges.yml
 
-- include: ports.yml
+- include_tasks: ports.yml
