@@ -1,15 +1,16 @@
 ---
 # tasks file for ansible-openvswitch
-- name: Gather services status.
+- name: main | Gather services status
   ansible.builtin.service_facts:
+  changed_when: false
 
-- include_tasks: debian.yml
+- ansible.builtin.include_tasks: debian.yml
   when: ansible_os_family == "Debian"
 
-- include_tasks: service.yml
+- ansible.builtin.include_tasks: service.yml
 
-- include_tasks: system_tuning.yml
+- ansible.builtin.include_tasks: system_tuning.yml
 
-- include_tasks: bridges.yml
+- ansible.builtin.include_tasks: bridges.yml
 
-- include_tasks: ports.yml
+- ansible.builtin.include_tasks: ports.yml
