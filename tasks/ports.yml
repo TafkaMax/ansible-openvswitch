@@ -7,7 +7,5 @@
     tag: "{{ item[1]['tag']|default(omit) }}"
     timeout: "{{ item[0]['timeout']|default(omit) }}"
   become: true
-  with_subelements:
-    - "{{ openvswitch_ports }}"
-    - ports
+  loop: "{{ openvswitch_ports|subelements('ports') }}"
   when: openvswitch_ports is defined
