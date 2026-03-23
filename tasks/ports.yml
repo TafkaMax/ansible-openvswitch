@@ -8,4 +8,6 @@
     timeout: "{{ item[0]['timeout']|default(omit) }}"
   become: true
   loop: "{{ openvswitch_ports|subelements('ports') }}"
-  when: openvswitch_ports is defined
+  when: 
+    - openvswitch_ports is defined
+    - not ansible_check_mode
