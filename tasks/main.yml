@@ -17,5 +17,5 @@
 - name: main | Include bridges tasks
   ansible.builtin.include_tasks: bridges.yml
 
-- name: main | include ports tasks
+- name: main | Include ports tasks
   ansible.builtin.include_tasks: ports.yml
