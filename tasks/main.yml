@@ -4,13 +4,18 @@
   ansible.builtin.service_facts:
   changed_when: false
 
-- ansible.builtin.include_tasks: debian.yml
+- name: main | Include Debian tasks
+  ansible.builtin.include_tasks: debian.yml
   when: ansible_os_family == "Debian"
 
-- ansible.builtin.include_tasks: service.yml
+- name: main | Include service tasks
+  ansible.builtin.include_tasks: service.yml
 
-- ansible.builtin.include_tasks: system_tuning.yml
+- name: main | Include system_tuning tasks
+  ansible.builtin.include_tasks: system_tuning.yml
 
-- ansible.builtin.include_tasks: bridges.yml
+- name: main | Include bridges tasks
+  ansible.builtin.include_tasks: bridges.yml
 
-- ansible.builtin.include_tasks: ports.yml
+- name: main | include ports tasks
+  ansible.builtin.include_tasks: ports.yml

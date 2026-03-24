@@ -9,6 +9,6 @@
     vlan: "{{ item['vlan']|default(omit) }}"
   become: true
   loop: "{{ openvswitch_bridges }}"
-  when: 
+  when:
     - openvswitch_bridges is defined
     - not ansible_check_mode
